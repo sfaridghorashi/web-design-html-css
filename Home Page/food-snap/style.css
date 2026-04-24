@@ -1,0 +1,661 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    direction: rtl;
+    font-family: Vazir;
+}
+ul{
+    list-style: none;
+
+}
+html::-webkit-scrollbar {
+    width: 10px;
+}
+
+#food::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #eee;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+
+section {
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+}
+
+main {
+    width: 85%;
+    margin: 50px auto;
+}
+
+header {
+    position: relative;
+    background: #eee;
+    width: 100%;
+    height: 700px;
+    border-bottom-right-radius: 160px;
+    display: flex;
+}
+
+header .header_right {
+    width: 50%;
+    height: 100%;
+
+}
+
+header .header_right img {
+    width: 220px;
+}
+
+header .header_right .anim_header {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 50px;
+    font-size: 25px;
+}
+
+
+header .header_right .anim_header h1 {
+    margin-left: 25px;
+    margin-right: 10px;
+}
+
+header .header_right .anim_header > div {
+    width: 50%;
+    height: 60px;
+    overflow: hidden;
+}
+
+header .header_right .anim_header > div > ul {
+    animation: anim 4s cubic-bezier(1, 0, .38, 1.4) infinite;
+    animation-delay: 2s;
+}
+
+header .header_right .anim_header > div > ul > li {
+    font-size: 40px;
+    color: rgb(255, 0, 166);
+}
+
+
+@keyframes anim {
+    0% {
+        transform: translateY(0px);
+    }
+    25% {
+        transform: translateY(-60px);
+
+    }
+    50% {
+        transform: translateY(-120px);
+
+    }
+    75% {
+        transform: translateY(-180px);
+
+    }
+    100% {
+        transform: translateY(0px);
+
+    }
+}
+
+header .header_right p {
+    color: #666;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+header .searchBox {
+    width: 70%;
+    height: 50px;
+    background: white;
+    margin: 20px;
+    border-radius: 30px;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .searchBox input {
+    width: 80%;
+    height: 100%;
+    border: 0;
+    outline: none;
+    padding: 0 10px;
+    color: #444;
+}
+
+header .searchBox .search {
+    width: 10%;
+    height: 90%;
+    background: rgb(255, 0, 166);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 50%;
+    margin-left: 2px;
+}
+
+
+header .searchBox .loc {
+    width: 10%;
+    height: 90%;
+    color: #666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+header .header_left {
+    width: 50%;
+    position: relative;
+}
+
+header .header_left img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+header .header_left div {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 20px 0 0 45px;
+}
+
+header .header_left div > div {
+    width: auto;
+    height: auto;
+    background: deeppink;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 10px;
+}
+
+
+header .header_left div > div > p {
+    margin: 0 3px;
+}
+
+
+header .foods {
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    bottom: 100px;
+}
+
+header .foods ul {
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(55px);
+    border-radius: 25px;
+    border: 1px solid #eee;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    overflow-x: auto;
+}
+
+header .foods ul > li {
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.cat{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+
+.cat ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.cat ul li{
+    position: relative;
+    width: 185px;
+    height: 90px;
+    margin: 10px 1px;
+    background: url("img/image_irani_1.jpg") no-repeat center;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #929292;
+    border: 3px solid #fff;
+}
+
+.cat ul li div{
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 5px;
+    border-top-left-radius: 10px;
+}
+
+
+
+.application{
+    background: #eee;
+    margin-top: 200px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-right-radius: 100px;
+}
+
+.application .app_right{
+    width: 50%;
+    height: 100%;
+}
+
+.application .app_right h1{
+    font-size: 30px;
+    color: #444;
+}
+.application .app_right .about_app{
+    font-size: 15px;
+    margin-top: 30px;
+    color: #777;
+    padding-left: 25px;
+    font-weight: 100;
+    line-height: 30px;
+}
+
+.application .app_right .download_app{
+    font-size: 13px;
+    color: #444444;
+    margin-top: 30px;
+    font-weight: 100;
+}
+
+
+.application .app_right .app_input{
+    background: white;
+    width: 50%;
+    height: 40px;
+    margin: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+.application .app_right .app_input>input{
+    border: 0;
+    outline: none;
+    width: 70%;
+    height: 100%;
+    padding: 0 5px;
+    border-radius: 8px;
+}
+
+.application .app_right .app_input>span{
+    color: white;
+    background: deeppink;
+    padding: 5px 7px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+.application .app_right .market{
+    width: 100%;
+}
+
+.application .app_right .market ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+
+.application .app_left{
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+
+.application .app_left img{
+    position: absolute;
+    top: -450px;
+    left: 0;
+}
+
+.plan{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #eeeeee;
+    margin-top: 150px;
+    border-radius: 50px;
+    padding: 80px 40px;
+}
+
+
+.plan .right{
+    width: 50%;
+}
+.plan .right h1{
+    color: #222;
+    font-size: 35px;
+}
+
+
+.plan .right h3{
+    color: #444;
+    margin: 15px 0;
+}
+.plan .right div{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: deeppink;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+.plan .left{
+    position: relative;
+    width: 50%;
+}
+
+.plan .left img{
+    position: absolute;
+    left: 0;
+    top: -200px;
+}
+
+footer{
+    border-top: 1px solid #ccc;
+    width: 100%;
+}
+footer .footer_top{
+    padding: 30px 40px;
+}
+
+footer .footer_top ul{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    list-style: none;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+footer .footer_top ul li{
+    font-size: 10px;
+    color: #444;
+    width: 80px;
+    font-weight: bold;
+    margin: 8px 15px;
+}
+
+
+
+.footer_bottom{
+    width: 100%;
+    background: #eeeeee;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 0 55px 0 ;
+}
+
+.footer_bottom .snap_logo_footer{
+    width: 150px;
+    padding: 25px 0;
+}
+
+
+
+.footer_bottom .icon_layer{
+    width: 220px;
+    padding: 25px 0;
+}
+
+.footer_bottom .icon_layer h3{
+    color: deeppink;
+    font-size: 18px;
+}
+.footer_bottom .icon_layer p{
+    color: #333;
+    font-size: 13px;
+    margin: 10px 0 35px 0;
+}
+
+
+.footer_bottom .icon_layer .icons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer_bottom .icon_layer .icons span{
+   width: 40px;
+    height: 40px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 0 5px #ccc;
+    color: #444444;
+    align-items: center;
+
+}
+
+.footer_bottom .list_footer{
+    width: 900px;
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    flex-wrap: wrap;
+    padding: 0 130px;
+}
+.footer_bottom .list_footer ul{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.footer_bottom .list_footer ul li{
+    width: 280px;
+    font-size: 12px;
+    color: #666;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.footer_bottom .namad{
+    display: flex;
+    justify-content: end;
+    align-items: start;
+}
+
+
+@media (max-width: 650px) {
+
+    main{
+        width: 100%;
+        margin: 0;
+    }
+header{
+    border-radius: 0;
+    height: 650px;
+}
+    header .header_right{
+        width: 65% !important;
+    }
+
+    header .header_left{
+        width: 35% !important;
+        display: flex;
+        justify-content: end;
+        align-items: start;
+        padding: 45px;
+    }
+    header .header_left img{
+        left: -380px;
+    }
+    header .header_right img{
+        width: 200px;
+    }
+    header .header_right .anim_header h1{
+        margin-left: 0;
+        font-size: 20px;
+    }
+    header .header_right .anim_header > div > ul > li{
+        font-size: 20px;
+
+    }
+
+
+    header .header_right .anim_header > div{
+        padding-right: 30px;
+        height: 30px;
+    }
+
+
+
+    @keyframes anim {
+        0% {
+            transform: translateY(0px);
+        }
+        25% {
+            transform: translateY(-30px);
+
+        }
+        50% {
+            transform: translateY(-60px);
+
+        }
+        75% {
+            transform: translateY(-90px);
+
+        }
+        100% {
+            transform: translateY(0px);
+
+        }
+    }
+    header .header_right p{
+        font-size: 13px;
+    }
+
+
+    header .searchBox{
+        width: 80%;
+    }
+
+    header .searchBox .search{
+        width: 17%;
+    }
+    header .searchBox input{
+        width: 73%;
+    }
+
+    header .header_left div{
+        display: none;
+    }
+    header .foods ul > li{
+        margin: 0 20px;
+    }
+
+.cat h4{
+    margin: 25px;
+}
+
+.application{
+    border-radius: 0;
+
+}
+    .application .app_left{
+        display: none;
+    }
+    .application .app_right{
+        width: 100%;
+    }
+
+    .application .app_right .app_input{
+        width: 60%;
+    }
+    .plan{
+margin-bottom: 20px;
+    }
+    .plan .right{
+        width: 100%;
+
+    }
+    .plan .left{
+        display: none;
+    }
+
+    .footer_bottom .list_footer{
+        margin: 0;
+        padding: 0;
+    }
+    .footer_bottom .list_footer ul li{
+        width: 200px;
+    }
+    .footer_bottom .namad{
+        margin: 25px 10px ;
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
