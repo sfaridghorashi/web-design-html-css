@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+    box-sizing: border-box;
+    font-family: "B Koodak";
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(img/bg.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+}
+
+.container {
+    position: relative;
+    width: calc(100% - 100px);
+    height: calc(100vh - 200px);
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+header {
+    direction: ltr;
+    position: absolute;
+    top: -40px;
+    left: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+
+header ul {
+    display: flex;
+}
+
+
+header .logo {
+    color: #8a2435;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+header ul li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+header ul li a {
+
+    text-decoration: none;
+    color: #8a2435;
+    padding: 8px 15px;
+    border-radius: 25px;
+
+}
+
+header ul li a:hover, .active {
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    transform: translateX(150px);
+    width: 700px;
+    height: auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 40px;
+    padding-left: 110px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.content h2 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #8a2435;
+}
+
+.content p {
+    font-size: 18px;
+    color: #8a2435;
+
+}
+
+.content a {
+    color: #8a2435;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 18px;
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 15px 30px;
+}
+
+.imgBox img {
+    width: 400px;
+    animation: animate 5s infinite;
+}
+
+@keyframes animate {
+    0%, 100% {
+        transform: translateY(50px);
+    }
+    50% {
+        transform: translateY(100px);
+    }
+}
+
+
+.icons {
+    position: absolute;
+    left: -25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.icons li {
+    list-style: none;
+}
+
+.icons li a {
+    text-decoration: none;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 5px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.icons li a img {
+    transform: scale(0.6);
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+}
+
+.icons li:hover a img {
+    transform: scale(0.6) rotate(360deg);
+}
+
+
+@media (max-width: 1000px) {
+
+
+    section {
+        height: 100%;
+        padding: 50px 10px 10px;
+    }
+
+    .container {
+        flex-direction: column;
+        height: auto;
+        width: calc(100% - 20px);
+        padding: 20px;
+    }
+
+    header {
+        position: relative;
+        right: 0;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        padding: 20px;
+        top: -50px;
+    }
+
+    header ul {
+        flex-wrap: wrap;
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    header ul li {
+        margin: 2px;
+    }
+
+
+    .container .content {
+        transform: translateX(0px);
+        max-width: 100%;
+        padding: 30px;
+        margin-top: -40px;
+    }
+
+    .content h2 {
+        font-size: 30px;
+    }
+
+    .content p {
+        font-size: 18px;
+    }
+
+    .content a {
+        font-size: 17px;
+        padding: 10px 20px;
+    }
+.icons{
+    position: relative;
+    flex-direction: row;
+}
+    .icons li{
+        margin: 0 10px;
+    }
+
+    .imgBox{
+        margin-bottom: 50px;
+    }
+
+
+    @keyframes animate {
+        0%, 100% {
+            transform: translateY(-20px);
+        }
+        50% {
+            transform: translateY(20px);
+        }
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+

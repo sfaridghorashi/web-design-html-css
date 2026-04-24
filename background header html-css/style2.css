@@ -1,0 +1,53 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+overflow: hidden;
+}
+
+.top {
+  width: 97%;
+  height: 500px;
+  background: deeppink;
+  margin: 20px auto 0;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.content {
+    width: 900px;
+    text-align: center;
+}
+
+.content h2 {
+    margin: 10px 0;
+    color: white;
+    font-size: 3rem;
+}
+
+.content p {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.bottom {
+    width: 92%;
+    height: 100px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.bottom .paein {
+    width: 98%;
+    background:deeppink;
+    clip-path: polygon(51% 28%,0 0,100% 0);
+    height:200px;
+}

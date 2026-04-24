@@ -1,0 +1,99 @@
+@font-face {
+    font-family: B koodak;
+    src: url(./font/B\ Koodak\ Bold_0.ttf);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:B koodak,Arial, Helvetica, sans-serif ;
+    direction: rtl;
+}
+body {
+    background-color:#262626 ;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 100vh;
+
+}
+
+.container {
+    width: 350px;
+    height: 540px;
+    background-color: #2f363e;
+    border-radius: 30px;
+    padding: 50px;
+    box-shadow:25px 25px 55px rgba(0, 0, 0, 0.25), 
+               10px 10px 50px rgba(0, 0, 0, 0.25),
+               inset 5px 5px 10px rgba(0, 0, 0, 0.75),
+               inset 5px 5px 20px rgba(225, 225, 225, 0.2),
+               inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+
+}
+
+.container h2 {
+    color:#fff ;
+    font-size: 25px;
+}
+.container .list {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    cursor: pointer;
+    position: relative;
+}
+.container .list::before{
+    content:'';
+    width: 55px;
+    height: 55px;
+    background-color: #b11515;
+    border-radius: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow:5px 5px 7px rgba(0, 0, 0, 0.25), 
+    inset 2px 2px 5px rgba(0, 0, 0, 0.25),
+    inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+
+}
+
+.container .list .rank {
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.container .list .rank::before{
+    content:'';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color:#262626 ;
+    border-radius: 30px;
+    transform: scale(0);
+    transition: 0.5s;
+}
+.text {
+    margin-right: 10px;
+    color:#fff;
+    z-index: 1;
+
+}
+.container .list:hover .rank::before {
+    transform: scale(1);
+}
+.container .list:hover .rank span {
+    color: #fff;
+    font-size: 15px;
+    position: absolute;
+    transition: 0.5s;
+}
+.container .list:hover::before{
+    width: 100%;
+}

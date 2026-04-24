@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+}    
+
+section {
+width: 100%;
+height: 100vh;
+position: relative;
+}
+
+.layer2 {
+    width: 100%;
+    height: 100%;
+    background: url(./img/pic\ background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 2s;
+}
+
+.layer1 {
+position:absolute ;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+background: url(./img/pic\ background.jpg);
+width: 600px;
+background-position: center;
+height:400px;
+transition: 2s;
+z-index:1 ;
+}
+
+.layer1:hover {
+    box-shadow:0 25px 60px rgba(0, 0, 0, 0.8) ;
+}
+.layer1:hover ~ .layer2 {
+    filter: blur(10px);
+}
