@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Farid Ghorashi | Web Design Projects</title>
+    <title>Farid Ghorashi | Web Design Portfolio</title>
 
     <style>
         * {
@@ -15,15 +15,15 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: #f5f7fa;
+            background: #f4f6f8;
             color: #222;
         }
 
         header {
             background: #222;
             color: white;
-            padding: 60px 20px;
             text-align: center;
+            padding: 70px 20px;
         }
 
         header h1 {
@@ -32,105 +32,226 @@
         }
 
         header p {
-            font-size: 18px;
+            font-size: 19px;
             color: #ddd;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 50px auto;
             padding: 0 20px;
         }
 
+        .section-title {
+            font-size: 30px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
         .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
         }
 
         .project {
             background: white;
+            padding: 25px;
             border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
         }
 
-        .project h2 {
+        .project:hover {
+            transform: translateY(-5px);
+        }
+
+        .project h3 {
             margin-bottom: 15px;
+            font-size: 20px;
         }
 
         .project p {
             color: #666;
-            margin-bottom: 25px;
-            line-height: 1.6;
+            margin-bottom: 20px;
         }
 
         .project a {
             display: inline-block;
-            text-decoration: none;
             background: #222;
             color: white;
-            padding: 12px 22px;
+            text-decoration: none;
+            padding: 10px 20px;
             border-radius: 6px;
+            transition: 0.3s;
         }
 
         .project a:hover {
-            background: #444;
+            background: #555;
         }
 
         footer {
-            text-align: center;
-            padding: 30px;
-            margin-top: 50px;
             background: #222;
             color: white;
+            text-align: center;
+            padding: 30px;
         }
     </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>Farid Ghorashi</h1>
-        <p>HTML & CSS Web Design Projects</p>
-    </header>
+<header>
+    <h1>Farid Ghorashi</h1>
+    <p>HTML & CSS Web Design Portfolio</p>
+</header>
 
-    <main class="container">
+<main class="container">
 
-        <div class="projects">
+    <!-- ================= HOME PAGE PROJECTS ================= -->
 
-            <div class="project">
-                <h2>Home Page</h2>
+    <h2 class="section-title">Home Page Projects</h2>
 
-                <p>
-                    My web design project created using HTML and CSS.
-                </p>
+    <div class="projects">
 
-                <a href="./Home%20Page/">
-                    View Project
-                </a>
-            </div>
-
-            <div class="project">
-                <h2>Mini Project</h2>
-
-                <p>
-                    Another project developed while practicing HTML and CSS.
-                </p>
-
-                <a href="./Mini%20Project/">
-                    View Project
-                </a>
-            </div>
-
+        <div class="project">
+            <h3>Aparat</h3>
+            <p>HTML & CSS Website</p>
+            <a href="./Home%20Page/aparat/">View Project</a>
         </div>
 
-    </main>
+        <div class="project">
+            <h3>Banafsh Restaurant</h3>
+            <p>Restaurant Website</p>
+            <a href="./Home%20Page/banafsh%20restaurant/">View Project</a>
+        </div>
 
-    <footer>
-        <p>© 2026 Farid Ghorashi</p>
-    </footer>
+        <div class="project">
+            <h3>Digikala</h3>
+            <p>E-commerce Website Design</p>
+            <a href="./Home%20Page/digikala/">View Project</a>
+        </div>
+
+        <div class="project">
+            <h3>Divar</h3>
+            <p>Marketplace Website Design</p>
+            <a href="./Home%20Page/divar/">View Project</a>
+        </div>
+
+        <div class="project">
+            <h3>Food Snap</h3>
+            <p>Food Website Design</p>
+            <a href="./Home%20Page/food-snap/">View Project</a>
+        </div>
+
+    </div>
+
+
+    <!-- ================= MINI PROJECTS ================= -->
+
+    <h2 class="section-title">Mini Projects</h2>
+
+    <div class="projects">
+
+        <div class="project">
+            <h3>Hover</h3>
+            <p>HTML & CSS Hover Effect</p>
+            <a href="./Mini%20Project/Hover%20html-css/">View Project</a>
+        </div>
+
+        <div class="project">
+            <h3>Analog Clock</h3>
+            <p>HTML & CSS Analog Clock</p>
+            <a href="./Mini%20Project/analog%20clock%20html-css/">View Project</a>
+        </div>
+
+        <div class="project">
+            <h3>Background Header</h3>
+            <p>HTML & CSS Header Design</p>
+            <a href="./Mini%20Project/background%20header%20html-css/">View Project</a>
+        </div>
+
+        <div class="project">
+            <h3>Check Box</h3>
+            <p>Custom Checkbox Design</p>
+            <a href="./Mini%20Project/check%20box%20html-css/">View Project</a>
+        </div>
+
+        <div class="project">
+            <h3>Cup</h3>
+            <p>CSS Cup Design</p>
+            <a href="./Mini%20Project/cup%20html-css/">View Project</a>
+        </div>
+
+        <div class="project">
+            <h3>First Page Design</h3>
+            <p>HTML & CSS Web Design</p>
+            <a href="./Mini%20Project/desin%20first%20page%20html-css/">View Project</a>
+        </div>
+
+        <div class="project">
+            <h3>Dockmeh</h3>
+            <p>HTML & CSS Project</p>
+            <a href="./Mini%20Project/dockmeh%20html-css/">View Project</a>
+        </div>
+
+        <div class="project">
+            <h3>Glassmorphism</h3>
+            <p>Glassmorphism UI Design</p>
+            <a href="./Mini%20Project/glassmorphism%20html-css/">View Project</a>
+        </div>
+
+        <div class="project">
+            <h3>Havayi Hover</h3>
+            <p>CSS Hover Animation</p>
+            <a href="./Mini%20Project/havayi%20hover%20html-css/">View Project</a>
+        </div>
+
+        <div class="project">
+            <h3>Input Box</h3>
+            <p>HTML & CSS Input Design</p>
+            <a href="./Mini%20Project/input%20Box%20html-css/">View Project</a>
+        </div>
+
+        <div class="project">
+            <h3>List</h3>
+            <p>HTML & CSS List Design</p>
+            <a href="./Mini%20Project/list%20html-css/">View Project</a>
+        </div>
+
+        <div class="project">
+            <h3>Loading</h3>
+            <p>CSS Loading Animation</p>
+            <a href="./Mini%20Project/loading%20html-css/">View Project</a>
+        </div>
+
+        <div class="project">
+            <h3>Menu</h3>
+            <p>HTML & CSS Menu</p>
+            <a href="./Mini%20Project/menu%20html-css/">View Project</a>
+        </div>
+
+        <div class="project">
+            <h3>Discount Ribbon</h3>
+            <p>CSS Discount Ribbon</p>
+            <a href="./Mini%20Project/special%20discount%20ribbon%20html-css/">View Project</a>
+        </div>
+
+        <div class="project">
+            <h3>Style Picture</h3>
+            <p>CSS Image Styling</p>
+            <a href="./Mini%20Project/style%20picture%20html-css/">View Project</a>
+        </div>
+
+    </div>
+
+</main>
+
+<footer>
+    <p>© 2026 Farid Ghorashi | HTML & CSS Web Design</p>
+</footer>
 
 </body>
 </html>
