@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f6fbfe" />
+  <meta name="description" content="آسمان، صفحه فرود فارسی و راست‌به‌چپ برای خدمات سفر، رزرو بلیط، تورها و مقاصد گردشگری." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="آسمان" />
+  <meta property="og:description" content="سفر بعدی شما، از اینجا آغاز می‌شود." />
+  <meta property="og:locale" content="fa_IR" />
+  <title>آسمان</title>
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="18" fill="%230ea5e9"/><path d="M15 35l34-18-12 32-7-13-15-1z" fill="white"/></svg>' />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --radius: 1rem;
+      --background: oklch(0.986 0.006 225);
+      --foreground: oklch(0.276 0.032 250);
+      --card: oklch(1 0 0);
+      --card-foreground: oklch(0.276 0.032 250);
+      --primary: oklch(0.677 0.144 240);
+      --primary-foreground: oklch(1 0 0);
+      --secondary: oklch(0.968 0.019 226);
+      --muted-foreground: oklch(0.556 0.024 240);
+      --border: oklch(0.925 0.012 225);
+      --sky-soft: oklch(0.79 0.121 232);
+      --cloud: oklch(1 0 0);
+      --shadow-soft: 0 2px 10px -4px oklch(0.276 0.032 250 / 0.08);
+      --shadow-lift: 0 24px 60px -28px oklch(0.276 0.032 250 / 0.28);
+      --shadow-glass: 0 30px 80px -40px oklch(0.276 0.032 250 / 0.45);
+      --gradient-footer: linear-gradient(180deg, oklch(0.968 0.019 226) 0%, oklch(0.905 0.05 231) 100%);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--foreground);
+      font-family: "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
+      line-height: 1.9;
+      overflow-x: hidden;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; text-decoration: none; }
+    img, video { display: block; max-width: 100%; }
+    button, input { font: inherit; }
+    .wrap { width: min(100%, 1280px); margin-inline: auto; padding-inline: 24px; }
+    .glass {
+      background: color-mix(in oklab, var(--cloud) 12%, transparent);
+      backdrop-filter: blur(18px) saturate(140%);
+      border: 1px solid color-mix(in oklab, var(--cloud) 22%, transparent);
+    }
+    .glass-light {
+      background: color-mix(in oklab, var(--cloud) 78%, transparent);
+      backdrop-filter: blur(24px) saturate(150%);
+      border: 1px solid color-mix(in oklab, var(--cloud) 90%, transparent);
+    }
+    .shadow-soft { box-shadow: var(--shadow-soft); }
+    .shadow-lift { box-shadow: var(--shadow-lift); }
+    .shadow-glass { box-shadow: var(--shadow-glass); }
+    .text-balance { text-wrap: balance; }
+    .hero-in {
+      animation: fade-in-up 1.2s cubic-bezier(0.22,1,0.36,1) both;
+    }
+    @keyframes fade-in-up { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+    .site-header {
+      position: fixed; inset-inline: 0; top: 0; z-index: 50; padding: 16px 16px 0;
+    }
+    .nav {
+      width: min(100%, 1280px);
+      margin-inline: auto;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+      border-radius: 24px; padding: 12px 16px;
+      transition: all .5s ease;
+    }
+    .nav.scrolled { background: color-mix(in oklab, var(--cloud) 78%, transparent); box-shadow: var(--shadow-soft); }
+    .nav:not(.scrolled) { background: color-mix(in oklab, var(--cloud) 12%, transparent); }
+    .brand { display: flex; align-items: center; gap: 10px; font-size: 1.125rem; font-weight: 800; letter-spacing: -.01em; }
+    .brand-badge {
+      width: 36px; height: 36px; border-radius: 16px; background: var(--primary); color: var(--primary-foreground);
+      display: grid; place-items: center;
+    }
+    .brand-badge svg, .icon { width: 18px; height: 18px; }
+    .nav-links { list-style: none; display: none; gap: 28px; margin: 0; padding: 0; font-size: .94rem; font-weight: 500; }
+    .nav-actions { display: none; align-items: center; gap: 12px; }
+    .nav a { position: relative; }
+    .nav-links a::after {
+      content: ""; position: absolute; inset-inline-end: 0; bottom: -6px; width: 0; height: 1px; background: currentColor; transition: width .3s;
+    }
+    .nav-links a:hover::after { width: 100%; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 0; cursor: pointer;
+      border-radius: 18px; padding: 14px 22px; font-size: .95rem; font-weight: 700; transition: .3s ease;
+    }
+    .btn-primary { background: var(--primary); color: var(--primary-foreground); box-shadow: var(--shadow-soft); }
+    .btn-secondary { background: color-mix(in oklab, var(--cloud) 12%, transparent); color: var(--cloud); border: 1px solid color-mix(in oklab, var(--cloud) 22%, transparent); }
+    .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-lift); }
+    .hero { position: relative; height: 320svh; overflow: clip; background: var(--foreground); }
+    .hero-frame { position: sticky; top: 0; height: 100svh; min-height: 560px; overflow: hidden; }
+    .hero-media, .hero-media video, .hero-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .hero-media video { pointer-events: none; user-select: none; will-change: contents; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, oklch(0.276 0.032 250 / 0.55) 0%, oklch(0.276 0.032 250 / 0.28) 45%, oklch(0.276 0.032 250 / 0.6) 100%); }
+    .hero-content {
+      position: relative; z-index: 1; min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 120px 24px 100px;
+    }
+    .pill { display: inline-flex; align-items: center; border-radius: 999px; padding: 10px 20px; font-size: .85rem; font-weight: 500; color: color-mix(in oklab, var(--cloud) 90%, transparent); }
+    .hero h1 { max-width: 16ch; margin: 0; font-size: clamp(2.4rem, 6vw, 4.75rem); font-weight: 800; line-height: 1.4; color: var(--cloud); text-shadow: 0 2px 24px oklch(0.276 0.032 250 / 0.55); }
+    .hero p { max-width: 42rem; margin: 24px 0 0; font-size: clamp(1rem, 2vw, 1.2rem); color: color-mix(in oklab, var(--cloud) 85%, transparent); text-shadow: 0 1px 12px oklch(0.276 0.032 250 / 0.5); }
+    .hero-actions { margin-top: 40px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .hero-content.is-scroll-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .hero-content.is-scroll-revealed { visibility: visible; pointer-events: auto; }
+    .hero-scroll-intro {
+      position: absolute; inset: 0; z-index: 3; display: grid; place-content: center; justify-items: center; align-content: center;
+      gap: 4px; text-align: center; color: #080b0d; transition: opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1);
+      pointer-events: none;
+    }
+    .hero-scroll-intro.is-hidden { opacity: 0; transform: translateY(-18px); }
+    .hero-scroll-intro strong { font-size: clamp(1.05rem, 2.1vw, 1.35rem); font-weight: 800; line-height: 1.8; text-shadow: 0 1px 10px rgba(255,255,255,.92); }
+    .hero-scroll-intro span { font-size: .9rem; font-weight: 600; line-height: 1.8; text-shadow: 0 1px 8px rgba(255,255,255,.92); }
+    .scroll-indicator { display: grid; place-items: center; margin-top: 3px; width: 28px; height: 32px; animation: scroll-nudge 1.8s ease-in-out infinite; }
+    .scroll-indicator svg { width: 22px; height: 22px; }
+    @keyframes scroll-nudge { 0%, 100% { transform: translateY(0); opacity: .62; } 50% { transform: translateY(7px); opacity: 1; } }
+    .search-wrap { position: relative; z-index: 2; margin-top: -64px; padding-inline: 16px; }
+    .search-card { width: min(100%, 1280px); margin-inline: auto; border-radius: 32px; padding: 12px; }
+    .search-inner { display: flex; flex-direction: column; gap: 10px; }
+    .search-fields { display: flex; flex: 1; flex-direction: column; gap: 10px; }
+    .field-row { display: flex; flex-direction: column; gap: 10px; }
+    .field {
+      min-width: 0; flex: 1; display: flex; flex-direction: column; gap: 4px; cursor: text; border-radius: 18px; padding: 12px 16px; transition: background .2s;
+    }
+    .field:hover { background: color-mix(in oklab, var(--secondary) 60%, transparent); }
+    .field label { font-size: .74rem; font-weight: 500; color: var(--muted-foreground); }
+    .field .value { display: flex; align-items: center; gap: 8px; }
+    .field input {
+      width: 100%; background: transparent; border: 0; outline: 0; color: var(--foreground); font-size: .95rem; font-weight: 600;
+      min-width: 0;
+    }
+    .field input::placeholder { color: color-mix(in oklab, var(--muted-foreground) 70%, transparent); font-weight: 400; }
+    .swap {
+      width: 36px; height: 36px; border-radius: 999px; border: 1px solid var(--border); background: var(--card); color: var(--muted-foreground);
+      display: grid; place-items: center; flex: 0 0 auto; margin-inline: auto;
+    }
+    .swap svg { width: 16px; height: 16px; }
+    .section { padding: 96px 0; }
+    .section-head { max-width: 54rem; margin-inline: auto; text-align: center; margin-bottom: 34px; }
+    .section-head .eyebrow { color: var(--primary); font-size: .9rem; font-weight: 700; }
+    .section-head h2 { margin: 10px 0 0; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.35; }
+    .section-head p { margin: 14px auto 0; max-width: 42rem; color: var(--muted-foreground); }
+    .dest-grid { display: grid; grid-template-columns: repeat(1, minmax(0, 1fr)); gap: 18px; }
+    .dest-card {
+      position: relative; overflow: hidden; border-radius: 28px; min-height: 380px; background: #dbeeff; color: #fff; box-shadow: var(--shadow-lift);
+    }
+    .dest-card img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.01); }
+    .dest-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 0%, rgba(23,43,58,.18) 35%, rgba(23,43,58,.8) 100%); }
+    .dest-content { position: absolute; inset-inline: 0; bottom: 0; z-index: 1; padding: 24px; display: flex; align-items: end; justify-content: space-between; gap: 16px; }
+    .dest-content h3 { margin: 8px 0 0; font-size: 1.7rem; line-height: 1.2; }
+    .dest-content p { margin: 6px 0 0; color: rgba(255,255,255,.86); font-size: .95rem; }
+    .dest-badge { display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; padding: 8px 12px; background: rgba(255,255,255,.16); backdrop-filter: blur(14px); font-size: .8rem; }
+    .feature { background: linear-gradient(180deg, oklch(0.968 0.019 226) 0%, oklch(0.905 0.05 231) 100%); }
+    .feature-inner { display: grid; grid-template-columns: 1fr; gap: 24px; align-items: center; }
+    .feature-card { overflow: hidden; border-radius: 34px; min-height: 440px; box-shadow: var(--shadow-lift); }
+    .feature-card img { width: 100%; height: 100%; object-fit: cover; }
+    .feature-copy h2 { font-size: clamp(1.8rem, 4vw, 3.2rem); line-height: 1.35; margin: 0; }
+    .feature-copy p { color: var(--muted-foreground); margin: 18px 0 0; max-width: 34rem; }
+    .stats { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; margin-top: 24px; }
+    .stat { border-radius: 24px; padding: 18px; background: rgba(255,255,255,.65); border: 1px solid rgba(255,255,255,.85); }
+    .stat strong { display: block; font-size: 1.8rem; line-height: 1; }
+    .stat span { display: block; margin-top: 8px; color: var(--muted-foreground); font-size: .92rem; }
+    .newsletter { padding: 0 0 100px; }
+    .newsletter-card {
+      width: min(100%, 1280px); margin-inline: auto; border-radius: 34px; padding: 30px; background: var(--foreground); color: #fff;
+      display: grid; grid-template-columns: 1fr; gap: 22px; align-items: center; overflow: hidden;
+    }
+    .newsletter-card h2 { margin: 0; font-size: clamp(1.7rem, 4vw, 3rem); line-height: 1.35; }
+    .newsletter-card p { margin: 12px 0 0; max-width: 44rem; color: rgba(255,255,255,.82); }
+    .newsletter-form { display: flex; flex-direction: column; gap: 12px; }
+    .newsletter-form input {
+      width: 100%; border: 1px solid rgba(255,255,255,.2); border-radius: 18px; background: rgba(255,255,255,.08); color: #fff; padding: 16px 18px;
+      outline: none;
+    }
+    .newsletter-form input::placeholder { color: rgba(255,255,255,.62); }
+    footer {
+      background: var(--gradient-footer); padding: 26px 0 36px; color: color-mix(in oklab, var(--foreground) 90%, black);
+    }
+    .footer-inner { width: min(100%, 1280px); margin-inline: auto; padding-inline: 24px; display: flex; flex-direction: column; gap: 16px; align-items: center; justify-content: space-between; text-align: center; }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; font-size: .95rem; font-weight: 500; }
+    .menu-btn { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 16px; border: 0; background: transparent; color: inherit; }
+    .mobile-menu { display: none; width: min(100%, 1280px); margin: 12px auto 0; border-radius: 24px; padding: 20px; }
+    .mobile-menu.open { display: block; }
+    .mobile-menu ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+    .mobile-actions { display: flex; gap: 12px; margin-top: 18px; }
+    .mobile-actions .btn { flex: 1; }
+    .hidden-lg { display: none; }
+    @media (min-width: 768px) {
+      .wrap { padding-inline: 32px; }
+      .search-wrap { padding-inline: 24px; }
+      .newsletter-card { padding: 40px; }
+      .dest-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .feature-inner { grid-template-columns: 1.1fr .9fr; }
+      .stats { grid-template-columns: repeat(4, minmax(0,1fr)); }
+      .footer-inner { flex-direction: row; text-align: right; }
+      .nav { padding-inline: 24px; }
+    }
+    @media (min-width: 1024px) {
+      .nav-links, .nav-actions { display: flex; }
+      .hidden-lg { display: none !important; }
+      .search-inner { flex-direction: row; align-items: stretch; }
+      .field-row { flex-direction: row; align-items: center; }
+      .search-fields { flex-direction: row; align-items: center; gap: 8px; }
+      .swap { margin-inline: 0; }
+      .dest-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+      .newsletter-card { grid-template-columns: 1.2fr .8fr; }
+    }
+    @media (max-width: 1023.98px) {
+      .nav-links, .nav-actions { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; }
+      .hero-in { animation: none; }
+      .scroll-indicator { animation: none; }
+      .btn, .nav { transition: none; }
+    }
+    @media (max-width: 767.98px) { .hero { height: 280svh; } .hero-frame { min-height: 480px; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav id="nav" class="nav glass" aria-label="اصلی">
+      <a class="brand" href="#hero">
+        <span class="brand-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 16l20-5-20-5 5 5-5 5Z"/></svg>
+        </span>
+        آسمان
+      </a>
+      <ul class="nav-links">
+        <li><a href="#hero">صفحه اصلی</a></li>
+        <li><a href="#search">بلیط هواپیما</a></li>
+        <li><a href="#packages">تورها</a></li>
+        <li><a href="#destinations">مقاصد</a></li>
+        <li><a href="#services">خدمات</a></li>
+        <li><a href="#about">درباره ما</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#newsletter">ورود / ثبت‌نام</a>
+        <a href="#search" class="btn btn-primary" style="padding:10px 18px; border-radius:14px;">رزرو بلیط</a>
+      </div>
+      <button id="menuBtn" class="menu-btn hidden-lg" aria-label="منو" type="button">
+        <svg id="menuIcon" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </nav>
+    <div id="mobileMenu" class="mobile-menu glass-light shadow-lift">
+      <ul>
+        <li><a href="#hero">صفحه اصلی</a></li>
+        <li><a href="#search">بلیط هواپیما</a></li>
+        <li><a href="#packages">تورها</a></li>
+        <li><a href="#destinations">مقاصد</a></li>
+        <li><a href="#services">خدمات</a></li>
+        <li><a href="#about">درباره ما</a></li>
+      </ul>
+      <div class="mobile-actions">
+        <a class="btn btn-primary" href="#search">رزرو بلیط</a>
+        <a class="btn" style="background:transparent;border:1px solid var(--border);color:var(--foreground);" href="#newsletter">ورود / ثبت‌نام</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="hero-frame">
+        <div class="hero-media">
+          <video id="heroVideo" muted playsinline preload="auto" data-frame-count="124" aria-label="ویدیوی آسمان و پرواز">
+            <source src="assets/videos/hero-video-scroll.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="hero-overlay"></div>
+        <div id="heroIntro" class="hero-scroll-intro" aria-live="polite">
+          <strong>اولین سفر شما با اسکرول آغاز می‌شود</strong>
+          <span>اسکرول کنید</span>
+          <span class="scroll-indicator" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v15"/><path d="m6 13 6 6 6-6"/></svg>
+          </span>
+        </div>
+        <div id="heroContent" class="hero-content wrap is-scroll-hidden">
+        <span class="pill glass hero-in" style="margin-bottom:28px;">بیش از ۱۵ سال همراه مسافران ایرانی</span>
+        <h1 class="hero-in" style="animation-delay:120ms;">سفر بعدی شما، از اینجا آغاز می‌شود</h1>
+        <p class="hero-in text-balance" style="animation-delay:260ms;">بلیط هواپیما، تورهای داخلی و خارجی و تجربه‌ای متفاوت از سفر را با ما تجربه کنید.</p>
+        <div class="hero-actions hero-in" style="animation-delay:400ms;">
+          <a class="btn btn-primary" href="#search">رزرو بلیط</a>
+          <a class="btn btn-secondary" href="#destinations">کشف مقاصد</a>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="search" class="search-wrap">
+      <div class="search-card glass-light shadow-glass">
+        <div class="search-inner">
+          <div class="search-fields">
+            <div class="field-row" style="width:100%;">
+              <label class="field"><span>مبدا</span><span class="value"><input placeholder="تهران (THR)" /></span></label>
+              <button class="swap" type="button" aria-label="جابه‌جایی مبدا و مقصد"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 16 3 12m0 0 4-4m-4 4h18"/><path d="M17 8l4 4m0 0-4 4m4-4H3"/></svg></button>
+              <label class="field"><span>مقصد</span><span class="value"><input placeholder="استانبول (IST)" /></span></label>
+              <div style="display:none" id="desktopDivider"></div>
+            </div>
+            <div class="field-row" style="width:100%;">
+              <label class="field"><span>تاریخ رفت</span><span class="value"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><input placeholder="۱۲ شهریور" /></span></label>
+              <label class="field"><span>تاریخ برگشت</span><span class="value"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><input placeholder="۱۹ شهریور" /></span></label>
+              <label class="field"><span>مسافران</span><span class="value"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><input placeholder="۱ بزرگسال" /></span></label>
+              <label class="field"><span>کلاس پروازی</span><span class="value"><input placeholder="اکونومی" /></span></label>
+            </div>
+          </div>
+          <button class="btn btn-primary" type="button" style="padding-inline:32px; min-width: 180px;"> <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg> جستجوی پرواز</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="destinations" class="section">
+      <span id="packages" aria-hidden="true"></span>
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">مقاصد محبوب</div>
+          <h2>انتخاب‌های محبوب برای سفر بعدی</h2>
+          <p>مقصدهای منتخب را با همان حس آرام و آبی آسمان مرور کنید. هر کارت با تصویر اصلی و چیدمان مینیمال نگه داشته شده است.</p>
+        </div>
+        <div class="dest-grid">
+          <article class="dest-card"><img src="assets/images/dest-dubai.jpg" alt="دبی" /><div class="dest-content"><div><span class="dest-badge">از ۴٫۸ میلیون تومان</span><h3>دبی</h3><p>پروازهای روزانه و هتل‌های متنوع</p></div></div></article>
+          <article class="dest-card"><img src="assets/images/dest-istanbul.jpg" alt="استانبول" /><div class="dest-content"><div><span class="dest-badge">از ۳٫۹ میلیون تومان</span><h3>استانبول</h3><p>سفر شهری، خرید و تجربه‌ای زنده</p></div></div></article>
+          <article class="dest-card"><img src="assets/images/dest-paris.jpg" alt="پاریس" /><div class="dest-content"><div><span class="dest-badge">از ۱۲٫۵ میلیون تومان</span><h3>پاریس</h3><p>شهر نور و خیابان‌های کلاسیک</p></div></div></article>
+          <article class="dest-card"><img src="assets/images/dest-london.jpg" alt="لندن" /><div class="dest-content"><div><span class="dest-badge">از ۱۱٫۸ میلیون تومان</span><h3>لندن</h3><p>کلاسیک، شهری و همیشه جذاب</p></div></div></article>
+          <article class="dest-card"><img src="assets/images/dest-tokyo.jpg" alt="توکیو" /><div class="dest-content"><div><span class="dest-badge">از ۱۵٫۲ میلیون تومان</span><h3>توکیو</h3><p>ترکیب تکنولوژی و فرهنگ</p></div></div></article>
+          <article class="dest-card"><img src="assets/images/dest-maldives.jpg" alt="مالدیو" /><div class="dest-content"><div><span class="dest-badge">از ۱۸٫۹ میلیون تومان</span><h3>مالدیو</h3><p>آرامش آبی و ساحل‌های روشن</p></div></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section feature">
+      <div class="wrap feature-inner">
+        <div class="feature-copy">
+          <div class="eyebrow">تجربه سفر</div>
+          <h2>سفری راحت، از جستجو تا پرواز، با پشتیبانی پیوسته</h2>
+          <p>این بخش با تصویر تجربه و همان حس نرم و روشن طراحی شده تا ساختار اصلی صفحه را حفظ کند. فاصله‌ها، شعاع‌ها و شدت سایه‌ها مطابق زبان بصری منبع نگه داشته شده‌اند.</p>
+          <div class="stats">
+            <div class="stat"><strong>۱۵+</strong><span>سال همراهی با مسافران</span></div>
+            <div class="stat"><strong>۲۴/۷</strong><span>پشتیبانی سفر</span></div>
+            <div class="stat"><strong>۱۲۰+</strong><span>مقصد پروازی</span></div>
+            <div class="stat"><strong>۹۸٪</strong><span>رضایت مسافران</span></div>
+          </div>
+        </div>
+        <div class="feature-card"><img src="assets/images/experience.jpg" alt="تجربه سفر" /></div>
+      </div>
+    </section>
+
+    <section id="about" class="newsletter">
+      <div id="newsletter" class="newsletter-card">
+        <div>
+          <div class="eyebrow" style="color: rgba(255,255,255,.72);">خبرنامه</div>
+          <h2>برای پیشنهادهای سفر و تخفیف‌های ویژه، همراه ما بمانید</h2>
+          <p>این فرم صرفا ظاهری است و عملکردی ندارد، اما لایه‌بندی و حس بصری آن با حال و هوای اصلی صفحه همخوانی دارد.</p>
+        </div>
+        <form class="newsletter-form" onsubmit="return false;">
+          <input type="text" placeholder="ایمیل شما" />
+          <button class="btn btn-primary" type="submit">عضویت در خبرنامه</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div style="display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.05rem;">
+        <span class="brand-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 16l20-5-20-5 5 5-5 5Z"/></svg></span>
+        آسمان
+      </div>
+      <div class="footer-links">
+        <a href="#hero">صفحه اصلی</a>
+        <a href="#destinations">مقاصد</a>
+        <a href="#services">خدمات</a>
+        <a href="#about">درباره ما</a>
+      </div>
+      <div style="font-size:.92rem;color:var(--muted-foreground);">تمام حقوق این نسخه نمایشی محفوظ است.</div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    menuBtn?.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      menuIcon.innerHTML = open
+        ? '<path d="M6 6l12 12M18 6 6 18"/>'
+        : '<path d="M4 6h16M4 12h16M4 18h16"/>';
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      menuIcon.innerHTML = '<path d="M4 6h16M4 12h16M4 18h16"/>';
+    }));
+
+    const hero = document.getElementById('hero');
+    const heroVideo = document.getElementById('heroVideo');
+    const heroIntro = document.getElementById('heroIntro');
+    const heroContent = document.getElementById('heroContent');
+    let videoDuration = 0;
+    let frameCount = Number(heroVideo.dataset.frameCount) || 0;
+    let targetFrame = -1;
+    let renderedFrame = -1;
+    let scrubFrame = 0;
+
+    const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+    const getHeroProgress = () => {
+      const range = Math.max(hero.offsetHeight - window.innerHeight, 1);
+      return clamp((window.scrollY - hero.offsetTop) / range, 0, 1);
+    };
+    const renderScrub = () => {
+      scrubFrame = 0;
+      if (!videoDuration || !frameCount || targetFrame === renderedFrame) return;
+      const maxFrame = frameCount - 1;
+      const nextTime = maxFrame > 0 ? (targetFrame / maxFrame) * videoDuration : 0;
+      const safeTime = Math.min(nextTime, Math.max(videoDuration - 0.001, 0));
+      heroVideo.currentTime = safeTime;
+      renderedFrame = targetFrame;
+    };
+    const updateHeroSequence = () => {
+      const progress = getHeroProgress();
+      const introProgress = clamp(progress / 0.085, 0, 1);
+      const revealProgress = clamp((progress - 0.48) / 0.28, 0, 1);
+      heroIntro.style.opacity = String(1 - introProgress);
+      heroIntro.classList.toggle('is-hidden', introProgress > 0.72);
+      heroContent.style.opacity = String(revealProgress);
+      heroContent.style.transform = `translateY(${(1 - revealProgress) * 28}px)`;
+      heroContent.classList.toggle('is-scroll-revealed', revealProgress > 0.02);
+      if (videoDuration && frameCount) {
+        targetFrame = clamp(Math.round(progress * (frameCount - 1)), 0, frameCount - 1);
+        if (!scrubFrame && targetFrame !== renderedFrame) scrubFrame = requestAnimationFrame(renderScrub);
+      }
+    };
+    const initHeroScrub = () => {
+      videoDuration = Number.isFinite(heroVideo.duration) ? heroVideo.duration : 0;
+      frameCount = Number(heroVideo.dataset.frameCount) || Math.max(1, Math.round(videoDuration * 24));
+      renderedFrame = -1;
+      updateHeroSequence();
+    };
+    heroVideo.addEventListener('loadedmetadata', initHeroScrub, { once: true });
+    if (heroVideo.readyState >= 1) initHeroScrub();
+    window.addEventListener('scroll', updateHeroSequence, { passive: true });
+    window.addEventListener('resize', updateHeroSequence, { passive: true });
+  </script>
+</body>
+</html>
