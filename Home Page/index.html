@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="fa"><head><title>ماه‌روسری | فروشگاه روسری</title><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link rel="stylesheet" href="css/style.css"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={theme:{extend:{"colors":{"tertiary-fixed":"#ffdad9","background":"#faf9f6","error-container":"#ffdad6","surface-tint":"#5f5e5e","secondary-fixed-dim":"#e9c176","surface":"#faf9f6","primary-fixed":"#e5e2e1","tertiary-fixed-dim":"#edbaba","primary-container":"#1c1b1b","inverse-on-surface":"#f2f1ee","on-primary":"#ffffff","on-secondary":"#ffffff","error":"#ba1a1a","on-tertiary-fixed-variant":"#613d3d","outline":"#747878","surface-container-high":"#e9e8e5","on-tertiary":"#ffffff","secondary-container":"#fed488","primary-fixed-dim":"#c8c6c5","tertiary":"#000000","on-background":"#1a1c1a","surface-variant":"#e3e2e0","secondary-fixed":"#ffdea5","inverse-primary":"#c8c6c5","inverse-surface":"#2f312f","on-primary-fixed-variant":"#474746","on-surface":"#1a1c1a","on-primary-fixed":"#1c1b1b","on-tertiary-container":"#a57979","on-error-container":"#93000a","on-secondary-fixed-variant":"#5d4201","surface-bright":"#faf9f6","surface-container-low":"#f4f3f1","on-secondary-container":"#785a1a","on-tertiary-fixed":"#2f1314","on-surface-variant":"#444748","outline-variant":"#c4c7c7","surface-container-highest":"#e3e2e0","on-error":"#ffffff","surface-dim":"#dbdad7","on-secondary-fixed":"#261900","tertiary-container":"#2f1314","secondary":"#775a19","primary":"#000000","on-primary-container":"#858383","surface-container":"#efeeeb","surface-container-lowest":"#ffffff"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"margin-desktop":"64px","container-max":"1280px","gutter":"24px","unit":"8px","margin-mobile":"20px"},"fontFamily":{"label-sm":["Work Sans"],"display-lg":["Libre Caslon Text"],"body-md":["Plus Jakarta Sans"],"display-lg-mobile":["Libre Caslon Text"],"body-lg":["Plus Jakarta Sans"],"headline-md":["Libre Caslon Text"]},"fontSize":{"label-sm":["12px",{"lineHeight":"16px","fontWeight":"500"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"400"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"display-lg-mobile":["32px",{"lineHeight":"40px","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"400"}]}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&family=Work+Sans:wght@100..900&display=swap" rel="stylesheet"/></head><body class="bg-background font-body-md text-on-surface selection:bg-secondary-container selection:text-on-secondary-container"><header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-[1280px] mx-auto px-margin-mobile lg:px-margin-desktop flex items-center justify-between"><div class="flex items-center gap-6"><button class="lg:hidden text-on-surface"><span class="material-symbols-outlined">menu</span></button><nav class="hidden lg:flex items-center gap-8" data-active-classes="text-secondary font-bold"><a aria-current="page" class="transition-colors text-secondary font-bold" data-path="home" href="#">خانه</a><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="products" href="#">محصولات</a><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="new-arrivals" href="#">جدیدترین‌ها</a><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="best-sellers" href="#">پرفروش‌ها</a></nav></div><div class="absolute left-1/2 -translate-x-1/2 flex flex-col items-center gap-1"><img alt="Logo" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8GUhfhSFXp7x4wnYWzefweoMaNmvW-ItNbXGOUt6xTaVrmMK1wxLlcbRD6ZecF41I3M_sF1cc0It4gUj3xikMDsvxkSqpN2Jm4q0wHqd3Rc-aUskjI4UUB_6AyfWROCSo736iJgat464GdP22xZMpxiPN2Dh0URmXyYBifseCUfGc9PV5jRxWnkfZKXEUK6NalvXy5zm9ZnlAnvcqlMNiau0Sjntvxf1GvJ36_c-mGi4GSvEIgWrs"/><span class="font-headline-md text-[18px] tracking-widest text-primary">ماه‌روسری</span></div><div class="flex items-center gap-4"><button class="text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined">search</span></button><button class="relative text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined">shopping_bag</span><span class="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-secondary text-[10px] text-white">۲</span></button></div></div></header><main class="w-full pt-20"><div class="flex flex-col w-full relative overflow-hidden font-body-md text-on-surface bg-background">
+<!-- Toast Container -->
+<div class="fixed top-24 left-4 z-50 flex flex-col gap-2" id="toast-container"></div>
+<!-- Cart Drawer -->
+<div class="fixed inset-y-0 left-0 w-full md:w-96 bg-surface shadow-2xl z-50 transform -translate-x-full transition-transform duration-500 ease-in-out flex flex-col pointer-events-none" id="cart-drawer">
+<div class="p-6 border-b border-outline-variant flex justify-between items-center bg-surface-container-low pointer-events-auto">
+<h2 class="font-headline-md text-xl text-primary">سبد خرید شما</h2>
+<button class="text-on-surface-variant hover:text-primary transition-colors" id="close-cart-btn">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex-1 overflow-y-auto p-6 pointer-events-auto" id="cart-items-container">
+<!-- Cart Item Template -->
+<div class="flex gap-4 mb-6 pb-6 border-b border-outline-variant/50">
+<img alt="روسری ابریشمی" class="w-20 h-24 object-cover rounded-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-zDfO9d8QuXo7-ciLbgY4o3roiaE8aq-IBhIKm4yES4ZOtaZhc-dCGSjXeY76ZsWPwAOlrZBL7vSiy7tsRsBM42APWk7OROsD9cnUFr3FFloZBtRhhp6IvdcukwnG25zZ67DFtjS_CqKwUy3ZPRWU8gO-gNlxjXQOuXzUP2pJmAuaymyCgNu88z-CEbdLgF0LtTvrGIOq2dh-QQqpDYYj-eIziHVWKRZfxNgMxzBjhVT3c7nVQCNs"/>
+<div class="flex flex-col flex-1 justify-between">
+<div>
+<h3 class="font-label-sm text-sm font-bold">روسری ابریشمی طرح گل</h3>
+<p class="text-xs text-on-surface-variant mt-1">رنگ: آبی درباری</p>
+</div>
+<div class="flex justify-between items-center mt-2">
+<div class="flex items-center gap-3 border border-outline-variant rounded-sm px-2 py-1">
+<button class="text-xs text-on-surface-variant hover:text-primary">-</button>
+<span class="text-sm font-medium">۱</span>
+<button class="text-xs text-on-surface-variant hover:text-primary">+</button>
+</div>
+<span class="text-sm font-medium text-secondary">۸۹۰,۰۰۰ تومان</span>
+</div>
+</div>
+</div>
+<!-- Cart Item Template 2 -->
+<div class="flex gap-4 mb-6 pb-6 border-b border-outline-variant/50">
+<img alt="روسری نخی" class="w-20 h-24 object-cover rounded-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhT1s8YIVpAWJh_ICEQvuV2fuQvTi4pRUuYcFA9vZcmH--ByWGryrm7qCz1nVkwlDNceICYd53ug39fdYaDqz--naAmxKr8xWtBkNtd8-CLnv5lAjXyKPWbfj2s-LOEGw9IJkqo20MfkYwnHudi--fCiWLGTrKIURn24JiZFeOvRMrQSpmpwBC2ESipCdsv4XAVnA4eQuIUxk2da2cCu3ND01vI5jzsMq6b0zloC67e5okAuPUCI41"/>
+<div class="flex flex-col flex-1 justify-between">
+<div>
+<h3 class="font-label-sm text-sm font-bold">روسری نخی مینیمال</h3>
+<p class="text-xs text-on-surface-variant mt-1">رنگ: کرم</p>
+</div>
+<div class="flex justify-between items-center mt-2">
+<div class="flex items-center gap-3 border border-outline-variant rounded-sm px-2 py-1">
+<button class="text-xs text-on-surface-variant hover:text-primary">-</button>
+<span class="text-sm font-medium">۱</span>
+<button class="text-xs text-on-surface-variant hover:text-primary">+</button>
+</div>
+<span class="text-sm font-medium text-secondary">۶۵۰,۰۰۰ تومان</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 border-t border-outline-variant bg-surface-container-lowest pointer-events-auto">
+<div class="flex justify-between items-center mb-4">
+<span class="text-on-surface-variant font-medium">جمع کل:</span>
+<span class="font-headline-md text-xl text-primary">۱,۵۴۰,۰۰۰ تومان</span>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 font-label-sm uppercase tracking-widest hover:bg-inverse-surface transition-colors flex items-center justify-center gap-2 group" id="checkout-btn">
+<span>تسویه حساب</span>
+<span class="material-symbols-outlined text-sm group-hover:-translate-x-1 transition-transform rtl:rotate-180">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Backdrop for Cart -->
+<div class="fixed inset-0 bg-primary/20 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-300" id="cart-backdrop"></div>
+<!-- MAIN VIEWS CONTAINER -->
+<div class="w-full transition-opacity duration-500" id="view-container">
+<!-- ================== HOME VIEW ================== -->
+<div class="w-full" id="home-view">
+<!-- 1. HERO -->
+<section class="relative w-full h-[80vh] min-h-[600px] flex items-center -mt-20">
+<div class="absolute inset-0 z-0">
+<img alt="Hero Image" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlIEXHFqZoEniGs-E9vxFQ3wkex5J9wz0AG74LQjrsgkASJJ2lkd00kKKaZNee_-8uN8ooeaGHVQiEPiB2nCB8f6qZwWiSbdbv7hjFgQo9k3Bp9swPeFOqevFerwIG5K1lMB1AZemMs70ZnCNtvMINU2-8CFmrLGV0fV10fCVieCcfYFzgHBL6TdiLvnaSDjijS85VQGyHkfEmB39nAXr3Amckf9lbzHDlc3nOcq7hG_ft3EjArIy9"/>
+<!-- Gradient Scrim for text readability -->
+<div class="absolute inset-0 bg-gradient-to-l from-background/90 md:from-background/70 via-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop w-full mt-20">
+<div class="max-w-xl pr-0 md:pr-12 space-y-8">
+<span class="inline-block py-1 px-3 bg-secondary/10 text-secondary border border-secondary/20 font-label-sm tracking-widest uppercase rounded-sm">کالکشن پاییزه ۱۴۰۳</span>
+<h1 class="font-display-lg text-display-lg text-primary leading-tight">استایل تو، <br/><span class="italic font-light text-surface-tint">با یک انتخاب خاص</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">مجموعه‌ای از روسری‌های خاص و باکیفیت برای استایلی متفاوت. هنر دست و اصالت ایرانی در تار و پود ابریشم.</p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<button class="bg-primary text-on-primary px-8 py-4 font-label-sm uppercase tracking-widest hover:bg-inverse-surface transition-colors">مشاهده محصولات</button>
+<button class="px-8 py-4 font-label-sm uppercase tracking-widest border border-outline text-primary hover:bg-surface-container transition-colors">جدیدترین مدل‌ها</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. CATEGORIES -->
+<section class="py-24 w-full bg-surface">
+<div class="max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline-md text-3xl text-primary mb-2">دسته‌بندی‌ها</h2>
+<p class="text-on-surface-variant">انتخاب بر اساس جنس و استایل</p>
+</div>
+<a class="hidden md:flex items-center gap-2 font-label-sm text-secondary hover:text-primary transition-colors group" href="#">
+              مشاهده همه
+              <span class="material-symbols-outlined text-sm group-hover:-translate-x-1 transition-transform rtl:rotate-180">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Category 1 -->
+<div class="group cursor-pointer relative overflow-hidden aspect-[4/5] bg-surface-container">
+<img alt="روسری ابریشمی" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-zDfO9d8QuXo7-ciLbgY4o3roiaE8aq-IBhIKm4yES4ZOtaZhc-dCGSjXeY76ZsWPwAOlrZBL7vSiy7tsRsBM42APWk7OROsD9cnUFr3FFloZBtRhhp6IvdcukwnG25zZ67DFtjS_CqKwUy3ZPRWU8gO-gNlxjXQOuXzUP2pJmAuaymyCgNu88z-CEbdLgF0LtTvrGIOq2dh-QQqpDYYj-eIziHVWKRZfxNgMxzBjhVT3c7nVQCNs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 right-0 p-6 flex flex-col justify-end">
+<h3 class="font-headline-md text-xl text-on-primary mb-1">روسری ابریشمی</h3>
+<span class="font-label-sm text-on-primary/80 flex items-center gap-1 group-hover:text-secondary transition-colors">کشف کنید <span class="material-symbols-outlined text-[16px]">chevron_left</span></span>
+</div>
+</div>
+<!-- Category 2 -->
+<div class="group cursor-pointer relative overflow-hidden aspect-[4/5] bg-surface-container">
+<img alt="روسری نخی" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhT1s8YIVpAWJh_ICEQvuV2fuQvTi4pRUuYcFA9vZcmH--ByWGryrm7qCz1nVkwlDNceICYd53ug39fdYaDqz--naAmxKr8xWtBkNtd8-CLnv5lAjXyKPWbfj2s-LOEGw9IJkqo20MfkYwnHudi--fCiWLGTrKIURn24JiZFeOvRMrQSpmpwBC2ESipCdsv4XAVnA4eQuIUxk2da2cCu3ND01vI5jzsMq6b0zloC67e5okAuPUCI41"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 right-0 p-6 flex flex-col justify-end">
+<h3 class="font-headline-md text-xl text-on-primary mb-1">روسری نخی</h3>
+<span class="font-label-sm text-on-primary/80 flex items-center gap-1 group-hover:text-secondary transition-colors">کشف کنید <span class="material-symbols-outlined text-[16px]">chevron_left</span></span>
+</div>
+</div>
+<!-- Category 3 -->
+<div class="group cursor-pointer relative overflow-hidden aspect-[4/5] bg-surface-container">
+<img alt="روسری مجلسی" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-2tRlheOOG7ak9fUhQ0DKc7fBl06U7EsiiKH7EHUcIj6YidbbKzE7kCOqjTL-8kaI-AYlxoat5uHYvuejKPhvS7THte4A_qGN5J4D0VhDhguNSzaJMG6kx29-z--DhcFwTtGmaaD8mVeizjbYn0gUID3z9TNb5QFrKLdLwxjedtISupu38qnKjpVCla3wQfX8k0M_IaprzuIej1gg5HbA1_H56fmzkI1q0G5t_tGX3HaFGrpK-mNa"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 right-0 p-6 flex flex-col justify-end">
+<h3 class="font-headline-md text-xl text-on-primary mb-1">روسری مجلسی</h3>
+<span class="font-label-sm text-on-primary/80 flex items-center gap-1 group-hover:text-secondary transition-colors">کشف کنید <span class="material-symbols-outlined text-[16px]">chevron_left</span></span>
+</div>
+</div>
+<!-- Category 4 -->
+<div class="group cursor-pointer relative overflow-hidden aspect-[4/5] bg-surface-container" data-alt="A beautifully draped soft cashmere blend everyday scarf in warm neutral tones like beige and camel, resting on a smooth minimalist stone surface, soft natural window lighting creating gentle folds and textures, high fashion editorial style, elegant and serene mood." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBgg8aBLrdho4DuO9t1D4sFibvtEf2j_lH0k-PbtWMvr_0MGrs7WsM8ORRCV0UoGHiIRbjCKf8L2hgw7SYrXVWcPoqg4hIY21YLhhscpNnxPHwUKoC-0XdZ-mssxOwkG-_qs3pXXDAWpV0fTllZmktK6CAHlvA3QnYASYD-ex1_EI7CeWlmRENgEa9Y-QfH9wyxwsz7EuNIKu99v9q23vt08N9E1XVuNpyf8scA8_g8veYkCyGz4rUE')">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 right-0 p-6 flex flex-col justify-end">
+<h3 class="font-headline-md text-xl text-on-primary mb-1">روسری روزمره</h3>
+<span class="font-label-sm text-on-primary/80 flex items-center gap-1 group-hover:text-secondary transition-colors">کشف کنید <span class="material-symbols-outlined text-[16px]">chevron_left</span></span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. BEST SELLERS -->
+<section class="py-24 w-full bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-display-lg-mobile md:font-display-lg text-primary mb-4">محبوب‌ترین‌ها</h2>
+<div class="w-16 h-px bg-secondary mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+<!-- Product 1 -->
+<div class="group flex flex-col">
+<div class="relative w-full aspect-square bg-surface-container overflow-hidden mb-6">
+<img alt="روسری ابریشمی طرح گل" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-zDfO9d8QuXo7-ciLbgY4o3roiaE8aq-IBhIKm4yES4ZOtaZhc-dCGSjXeY76ZsWPwAOlrZBL7vSiy7tsRsBM42APWk7OROsD9cnUFr3FFloZBtRhhp6IvdcukwnG25zZ67DFtjS_CqKwUy3ZPRWU8gO-gNlxjXQOuXzUP2pJmAuaymyCgNu88z-CEbdLgF0LtTvrGIOq2dh-QQqpDYYj-eIziHVWKRZfxNgMxzBjhVT3c7nVQCNs"/>
+<div class="absolute top-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="w-10 h-10 bg-surface rounded-full flex items-center justify-center text-on-surface hover:text-error transition-colors shadow-sm">
+<span class="material-symbols-outlined text-lg">favorite</span>
+</button>
+</div>
+<div class="absolute bottom-0 left-0 w-full p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+<button class="add-to-cart-btn w-full bg-primary/90 backdrop-blur-sm text-on-primary py-3 font-label-sm hover:bg-primary transition-colors shadow-md">افزودن به سبد</button>
+</div>
+</div>
+<div class="text-center">
+<span class="text-xs font-label-sm text-secondary uppercase tracking-wider mb-2 block">ابریشم خالص</span>
+<h3 class="font-body-lg text-primary mb-2">روسری ابریشمی طرح گل</h3>
+<p class="font-headline-md text-lg text-on-surface-variant">۸۹۰,۰۰۰ تومان</p>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group flex flex-col">
+<div class="relative w-full aspect-square bg-surface-container overflow-hidden mb-6">
+<img alt="روسری نخی مینیمال" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhT1s8YIVpAWJh_ICEQvuV2fuQvTi4pRUuYcFA9vZcmH--ByWGryrm7qCz1nVkwlDNceICYd53ug39fdYaDqz--naAmxKr8xWtBkNtd8-CLnv5lAjXyKPWbfj2s-LOEGw9IJkqo20MfkYwnHudi--fCiWLGTrKIURn24JiZFeOvRMrQSpmpwBC2ESipCdsv4XAVnA4eQuIUxk2da2cCu3ND01vI5jzsMq6b0zloC67e5okAuPUCI41"/>
+<div class="absolute top-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="w-10 h-10 bg-surface rounded-full flex items-center justify-center text-on-surface hover:text-error transition-colors shadow-sm">
+<span class="material-symbols-outlined text-lg">favorite</span>
+</button>
+</div>
+<div class="absolute bottom-0 left-0 w-full p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+<button class="add-to-cart-btn w-full bg-primary/90 backdrop-blur-sm text-on-primary py-3 font-label-sm hover:bg-primary transition-colors shadow-md">افزودن به سبد</button>
+</div>
+</div>
+<div class="text-center">
+<span class="text-xs font-label-sm text-secondary uppercase tracking-wider mb-2 block">نخ پنبه</span>
+<h3 class="font-body-lg text-primary mb-2">روسری نخی مینیمال</h3>
+<p class="font-headline-md text-lg text-on-surface-variant">۶۵۰,۰۰۰ تومان</p>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="group flex flex-col">
+<div class="relative w-full aspect-square bg-surface-container overflow-hidden mb-6">
+<img alt="روسری ساتن مجلسی" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-2tRlheOOG7ak9fUhQ0DKc7fBl06U7EsiiKH7EHUcIj6YidbbKzE7kCOqjTL-8kaI-AYlxoat5uHYvuejKPhvS7THte4A_qGN5J4D0VhDhguNSzaJMG6kx29-z--DhcFwTtGmaaD8mVeizjbYn0gUID3z9TNb5QFrKLdLwxjedtISupu38qnKjpVCla3wQfX8k0M_IaprzuIej1gg5HbA1_H56fmzkI1q0G5t_tGX3HaFGrpK-mNa"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface text-primary text-[10px] font-bold px-2 py-1 uppercase tracking-widest shadow-sm">جدید</span>
+</div>
+<div class="absolute top-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="w-10 h-10 bg-surface rounded-full flex items-center justify-center text-on-surface hover:text-error transition-colors shadow-sm">
+<span class="material-symbols-outlined text-lg">favorite</span>
+</button>
+</div>
+<div class="absolute bottom-0 left-0 w-full p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+<button class="add-to-cart-btn w-full bg-primary/90 backdrop-blur-sm text-on-primary py-3 font-label-sm hover:bg-primary transition-colors shadow-md">افزودن به سبد</button>
+</div>
+</div>
+<div class="text-center">
+<span class="text-xs font-label-sm text-secondary uppercase tracking-wider mb-2 block">ساتن پریمیوم</span>
+<h3 class="font-body-lg text-primary mb-2">روسری ساتن مجلسی</h3>
+<p class="font-headline-md text-lg text-on-surface-variant">۱,۲۰۰,۰۰۰ تومان</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. PROMO BANNER -->
+<section class="w-full py-24 relative overflow-hidden">
+<div class="absolute inset-0">
+<img alt="Autumn Promo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAczn_Ny3pkY30ZlAWU5B79XhorC0OTKsZ4pLk9rzgi53qmvjEuoTiZMul_vOdtStGd6cU_jYxJIB5DqkpWA10ZaWeTNYdxncaOFKxSDfRSrE_wLTPSiMPcpFpKbHL6_eK8nwkns6DyCaF9WpHIxh34Uoxlsql9SEqKa88ytU_3iuf4P4TEyfzFHyWHw1ucfZgzAQThgcYTNnZH-Txz38yIMavam32LRjvYFP_gZC15N3ru8wuJsRbr"/>
+<div class="absolute inset-0 bg-primary/60"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop flex flex-col items-center text-center">
+<span class="text-secondary font-label-sm tracking-widest uppercase mb-4 block">پیشنهاد ویژه فصل</span>
+<h2 class="font-display-lg text-on-primary mb-6">برای استایل پاییزی آماده‌ای؟</h2>
+<p class="text-on-primary/80 font-body-lg mb-10 max-w-md mx-auto">کالکشن جدید با رنگ‌های گرم پاییزی رسید. تا ۲۰٪ تخفیف روی مجموعه منتخب برای مدت محدود.</p>
+<button class="bg-surface text-primary px-8 py-4 font-label-sm uppercase tracking-widest hover:bg-secondary hover:text-on-secondary transition-colors">مشاهده کالکشن پاییزی</button>
+</div>
+</section>
+<!-- 6. WHY CHOOSE US -->
+<section class="py-20 w-full bg-surface border-t border-outline-variant/30">
+<div class="max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-x-reverse divide-outline-variant/30">
+<div class="flex flex-col items-center text-center px-4">
+<span class="material-symbols-outlined text-3xl text-secondary mb-4 font-light">local_shipping</span>
+<h4 class="font-label-sm font-bold text-primary mb-2">ارسال سریع</h4>
+<p class="text-xs text-on-surface-variant">به سراسر کشور</p>
+</div>
+<div class="flex flex-col items-center text-center px-4">
+<span class="material-symbols-outlined text-3xl text-secondary mb-4 font-light">verified</span>
+<h4 class="font-label-sm font-bold text-primary mb-2">تضمین کیفیت</h4>
+<p class="text-xs text-on-surface-variant">پارچه‌های وارداتی</p>
+</div>
+<div class="flex flex-col items-center text-center px-4">
+<span class="material-symbols-outlined text-3xl text-secondary mb-4 font-light">shield</span>
+<h4 class="font-label-sm font-bold text-primary mb-2">پرداخت امن</h4>
+<p class="text-xs text-on-surface-variant">درگاه معتبر بانکی</p>
+</div>
+<div class="flex flex-col items-center text-center px-4">
+<span class="material-symbols-outlined text-3xl text-secondary mb-4 font-light">assignment_return</span>
+<h4 class="font-label-sm font-bold text-primary mb-2">ضمانت بازگشت</h4>
+<p class="text-xs text-on-surface-variant">تا ۷ روز کاری</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- ================== CHECKOUT VIEW (Hidden by default) ================== -->
+<div class="w-full hidden pb-24" id="checkout-view">
+<div class="max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop">
+<div class="py-12 border-b border-outline-variant mb-12">
+<h1 class="font-display-lg text-primary">تسویه حساب</h1>
+<div class="flex items-center gap-2 mt-4 text-sm text-on-surface-variant">
+<button class="hover:text-primary transition-colors" onclick="showHomeView()">سبد خرید</button>
+<span class="material-symbols-outlined text-xs rtl:rotate-180">chevron_right</span>
+<span class="text-primary font-medium">اطلاعات ارسال و پرداخت</span>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row gap-16">
+<!-- Left Col: Form -->
+<div class="w-full lg:w-2/3">
+<form class="space-y-12" id="checkout-form">
+<!-- User Info -->
+<section>
+<h3 class="font-headline-md text-xl text-primary mb-6 flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-secondary text-on-secondary text-xs flex items-center justify-center font-bold">۱</span>
+                  اطلاعات گیرنده
+                </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="relative pt-4">
+<input class="peer w-full border-b border-outline bg-transparent py-2 text-primary focus:outline-none focus:border-primary transition-colors placeholder-transparent" id="fullname" placeholder="نام و نام خانوادگی" required="" type="text"/>
+<label class="absolute left-0 right-0 top-0 text-xs font-label-sm text-on-surface-variant transition-all peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-focus:top-0 peer-focus:text-xs peer-focus:text-primary" for="fullname">نام و نام خانوادگی</label>
+</div>
+<div class="relative pt-4">
+<input class="peer w-full border-b border-outline bg-transparent py-2 text-primary focus:outline-none focus:border-primary transition-colors placeholder-transparent text-left" dir="ltr" id="mobile" placeholder="شماره موبایل" required="" type="tel"/>
+<label class="absolute left-0 right-0 top-0 text-xs font-label-sm text-on-surface-variant transition-all peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-focus:top-0 peer-focus:text-xs peer-focus:text-primary" for="mobile">شماره موبایل</label>
+</div>
+</div>
+</section>
+<!-- Address Info -->
+<section>
+<h3 class="font-headline-md text-xl text-primary mb-6 flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-secondary text-on-secondary text-xs flex items-center justify-center font-bold">۲</span>
+                  آدرس ارسال
+                </h3>
+<div class="grid grid-cols-1 gap-6">
+<div class="relative pt-4">
+<textarea class="peer w-full border-b border-outline bg-transparent py-2 text-primary focus:outline-none focus:border-primary transition-colors placeholder-transparent resize-none" id="address" placeholder="آدرس دقیق" required="" rows="2"></textarea>
+<label class="absolute left-0 right-0 top-0 text-xs font-label-sm text-on-surface-variant transition-all peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-focus:top-0 peer-focus:text-xs peer-focus:text-primary" for="address">آدرس دقیق پستی</label>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="relative pt-4">
+<input class="peer w-full border-b border-outline bg-transparent py-2 text-primary focus:outline-none focus:border-primary transition-colors placeholder-transparent" id="city" placeholder="شهر" required="" type="text"/>
+<label class="absolute left-0 right-0 top-0 text-xs font-label-sm text-on-surface-variant transition-all peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-focus:top-0 peer-focus:text-xs peer-focus:text-primary" for="city">شهر</label>
+</div>
+<div class="relative pt-4">
+<input class="peer w-full border-b border-outline bg-transparent py-2 text-primary focus:outline-none focus:border-primary transition-colors placeholder-transparent text-left" dir="ltr" id="postal" placeholder="کد پستی" required="" type="text"/>
+<label class="absolute left-0 right-0 top-0 text-xs font-label-sm text-on-surface-variant transition-all peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-focus:top-0 peer-focus:text-xs peer-focus:text-primary" for="postal">کد پستی (۱۰ رقم)</label>
+</div>
+</div>
+</div>
+</section>
+<!-- Payment Gateway Simulator -->
+<section class="bg-surface-container-lowest p-6 md:p-8 rounded-xl border border-outline-variant/50 shadow-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
+<h3 class="font-headline-md text-xl text-primary mb-6 flex items-center gap-2 relative z-10">
+<span class="w-6 h-6 rounded-full bg-secondary text-on-secondary text-xs flex items-center justify-center font-bold">۳</span>
+                  درگاه پرداخت امن
+                </h3>
+<div class="space-y-6 relative z-10">
+<div class="flex justify-between items-center bg-surface p-4 border border-outline-variant rounded-md mb-6">
+<span class="font-label-sm text-on-surface-variant">مبلغ قابل پرداخت:</span>
+<span class="font-headline-md text-lg text-primary">۱,۵۴۰,۰۰۰ تومان</span>
+</div>
+<div class="relative pt-4" dir="ltr">
+<input class="peer w-full border-b border-outline bg-transparent py-2 text-primary focus:outline-none focus:border-primary transition-colors placeholder-transparent font-mono tracking-widest text-lg text-center" id="card" maxlength="19" placeholder="0000 0000 0000 0000" required="" type="text"/>
+<label class="absolute left-0 right-0 top-0 text-xs font-label-sm text-on-surface-variant transition-all peer-placeholder-shown:top-6 peer-focus:top-0 peer-focus:text-primary text-center" for="card">شماره کارت بانکی</label>
+</div>
+<div class="grid grid-cols-2 gap-8" dir="ltr">
+<div class="relative pt-4">
+<div class="flex items-center gap-2 justify-center">
+<input class="w-12 border-b border-outline bg-transparent py-2 text-primary focus:outline-none focus:border-primary transition-colors text-center font-mono" maxlength="2" placeholder="MM" required="" type="text"/>
+<span class="text-outline">/</span>
+<input class="w-12 border-b border-outline bg-transparent py-2 text-primary focus:outline-none focus:border-primary transition-colors text-center font-mono" maxlength="2" placeholder="YY" required="" type="text"/>
+</div>
+<label class="absolute left-0 right-0 top-0 text-xs font-label-sm text-on-surface-variant text-center">تاریخ انقضا</label>
+</div>
+<div class="relative pt-4">
+<input class="peer w-full border-b border-outline bg-transparent py-2 text-primary focus:outline-none focus:border-primary transition-colors placeholder-transparent font-mono text-center tracking-widest" id="cvv" maxlength="4" placeholder="CVV2" required="" type="password"/>
+<label class="absolute left-0 right-0 top-0 text-xs font-label-sm text-on-surface-variant transition-all peer-placeholder-shown:top-6 peer-focus:top-0 peer-focus:text-primary text-center" for="cvv">CVV2</label>
+</div>
+</div>
+<button class="w-full bg-[#20B2AA] text-white py-4 mt-8 font-label-sm uppercase tracking-widest hover:bg-[#1C9B94] transition-colors rounded-sm shadow-md flex justify-center items-center gap-2" id="pay-btn" type="submit">
+<span class="material-symbols-outlined text-sm">lock</span>
+                    پرداخت و ثبت سفارش
+                  </button>
+</div>
+</section>
+</form>
+</div>
+<!-- Right Col: Order Summary Sidebar -->
+<div class="w-full lg:w-1/3">
+<div class="sticky top-28 bg-surface-container-low p-6 md:p-8">
+<h3 class="font-headline-md text-lg text-primary mb-6 border-b border-outline-variant pb-4">خلاصه سفارش</h3>
+<div class="space-y-4 mb-6">
+<!-- Item -->
+<div class="flex gap-4">
+<img alt="روسری" class="w-16 h-20 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-zDfO9d8QuXo7-ciLbgY4o3roiaE8aq-IBhIKm4yES4ZOtaZhc-dCGSjXeY76ZsWPwAOlrZBL7vSiy7tsRsBM42APWk7OROsD9cnUFr3FFloZBtRhhp6IvdcukwnG25zZ67DFtjS_CqKwUy3ZPRWU8gO-gNlxjXQOuXzUP2pJmAuaymyCgNu88z-CEbdLgF0LtTvrGIOq2dh-QQqpDYYj-eIziHVWKRZfxNgMxzBjhVT3c7nVQCNs"/>
+<div class="flex-1">
+<h4 class="text-sm font-bold text-primary">روسری ابریشمی طرح گل</h4>
+<p class="text-xs text-on-surface-variant mt-1">۱ عدد</p>
+<p class="text-sm mt-2">۸۹۰,۰۰۰ تومان</p>
+</div>
+</div>
+<!-- Item -->
+<div class="flex gap-4">
+<img alt="روسری" class="w-16 h-20 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhT1s8YIVpAWJh_ICEQvuV2fuQvTi4pRUuYcFA9vZcmH--ByWGryrm7qCz1nVkwlDNceICYd53ug39fdYaDqz--naAmxKr8xWtBkNtd8-CLnv5lAjXyKPWbfj2s-LOEGw9IJkqo20MfkYwnHudi--fCiWLGTrKIURn24JiZFeOvRMrQSpmpwBC2ESipCdsv4XAVnA4eQuIUxk2da2cCu3ND01vI5jzsMq6b0zloC67e5okAuPUCI41"/>
+<div class="flex-1">
+<h4 class="text-sm font-bold text-primary">روسری نخی مینیمال</h4>
+<p class="text-xs text-on-surface-variant mt-1">۱ عدد</p>
+<p class="text-sm mt-2">۶۵۰,۰۰۰ تومان</p>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant pt-4 space-y-3 text-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>مبلغ کل محصولات</span>
+<span>۱,۵۴۰,۰۰۰ تومان</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>هزینه ارسال</span>
+<span>رایگان</span>
+</div>
+<div class="flex justify-between font-bold text-primary pt-3 border-t border-outline-variant/30 text-lg">
+<span>مبلغ قابل پرداخت</span>
+<span>۱,۵۴۰,۰۰۰ تومان</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ================== SUCCESS VIEW ================== -->
+<div class="w-full hidden py-32 min-h-[60vh] flex items-center justify-center bg-surface" id="success-view">
+<div class="max-w-md mx-auto px-6 text-center">
+<div class="w-24 h-24 bg-surface-container-highest rounded-full flex items-center justify-center mx-auto mb-8 shadow-inner relative">
+<div class="absolute inset-0 rounded-full border-2 border-secondary animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite]"></div>
+<span class="material-symbols-outlined text-5xl text-secondary">check_circle</span>
+</div>
+<h2 class="font-display-lg-mobile text-primary mb-4">پرداخت با موفقیت انجام شد</h2>
+<p class="text-on-surface-variant mb-2">سفارش شما با موفقیت ثبت شد و در حال پردازش است.</p>
+<p class="font-mono bg-surface-container-low inline-block px-4 py-2 rounded-sm text-primary font-bold mb-10 tracking-widest mt-4">شماره پیگیری: SH-10245</p>
+<button class="w-full bg-primary text-on-primary py-4 font-label-sm uppercase tracking-widest hover:bg-inverse-surface transition-colors" onclick="showHomeView()">بازگشت به فروشگاه</button>
+</div>
+</div>
+</div> <!-- End View Container -->
+</div></main><footer class="w-full bg-surface-container py-16 mt-16"><div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-12 text-right"><div class="col-span-1 md:col-span-1"><div class="flex items-center gap-2 mb-4"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8GUhfhSFXp7x4wnYWzefweoMaNmvW-ItNbXGOUt6xTaVrmMK1wxLlcbRD6ZecF41I3M_sF1cc0It4gUj3xikMDsvxkSqpN2Jm4q0wHqd3Rc-aUskjI4UUB_6AyfWROCSo736iJgat464GdP22xZMpxiPN2Dh0URmXyYBifseCUfGc9PV5jRxWnkfZKXEUK6NalvXy5zm9ZnlAnvcqlMNiau0Sjntvxf1GvJ36_c-mGi4GSvEIgWrs"/><span class="font-headline-md text-headline-md text-primary">ماه‌روسری</span></div><p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">تجربه‌ای متفاوت از ظرافت و زیبایی با مجموعه‌ای از لوکس‌ترین روسری‌های دست‌دوز ایرانی.</p></div><div><h4 class="font-label-sm text-label-sm uppercase mb-6 text-primary tracking-widest">دسترسی سریع</h4><nav class="flex flex-col gap-4"><a class="text-on-surface-variant hover:text-secondary" href="#">محصولات</a><a class="text-on-surface-variant hover:text-secondary" href="#">جدیدترین‌ها</a><a class="text-on-surface-variant hover:text-secondary" href="#">پربازدیدها</a></nav></div><div><h4 class="font-label-sm text-label-sm uppercase mb-6 text-primary tracking-widest">خدمات مشتریان</h4><nav class="flex flex-col gap-4"><a class="text-on-surface-variant hover:text-secondary" href="#">درباره ما</a><a class="text-on-surface-variant hover:text-secondary" href="#">تماس با ما</a><a class="text-on-surface-variant hover:text-secondary" href="#">قوانین و مقررات</a></nav></div><div><h4 class="font-label-sm text-label-sm uppercase mb-6 text-primary tracking-widest">ما را دنبال کنید</h4><div class="flex gap-4 mb-8"><a class="w-10 h-10 flex items-center justify-center rounded-full bg-background border border-outline-variant text-on-surface-variant hover:bg-primary hover:text-on-primary transition-all shadow-sm" href="#"><span class="material-symbols-outlined text-sm">photo_camera</span></a><a class="w-10 h-10 flex items-center justify-center rounded-full bg-background border border-outline-variant text-on-surface-variant hover:bg-primary hover:text-on-primary transition-all shadow-sm" href="#"><span class="material-symbols-outlined text-sm">send</span></a></div></div></div><div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin-desktop mt-16 pt-8 border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-6 text-on-surface-variant text-label-sm"><p>© ۱۴۰۳ ماه‌روسری. تمامی حقوق محفوظ است.</p><div class="flex gap-6 opacity-60"><span class="material-symbols-outlined">payments</span><span class="material-symbols-outlined">verified_user</span><span class="material-symbols-outlined">local_shipping</span></div></div></footer><script src="js/script.js"></script></body></html>
